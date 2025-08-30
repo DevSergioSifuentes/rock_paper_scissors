@@ -1,15 +1,29 @@
 function getComputerChoice(){
     let choice =Math.floor(Math.random()*3) ;
+    let sign ="";
     if (choice==0){
-        console.log("Rock");
+        sign = "Rock";
     }
     else if(choice == 1) {
-        console.log("Paper");
+        sign = "Paper";
     }
     else if(choice ==2) {
-        console.log("Scissors");
+        sign = "Scissors";
     }
+    return sign;
 }
+
+function getHumanChoice(){
+   const humanChoice=prompt("Select Rock, Paper or Scissors");
+   return humanChoice;
+}
+
+let humanScore = 0;
+let computerScore = 0;
+
+console.log(getHumanChoice());
+console.log(getComputerChoice());
+
 
 // This line will help later with the turn loop
 // for (let i=0; i<20; i++){
