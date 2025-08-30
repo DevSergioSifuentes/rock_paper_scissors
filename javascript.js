@@ -21,9 +21,6 @@ function getHumanChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-
 function playRound(humanChoice, computerChoice){
    let localHumanChoice = humanChoice.toLowerCase();
    let localComputerChoice = computerChoice.toLowerCase();
@@ -44,8 +41,18 @@ function playRound(humanChoice, computerChoice){
    }
 }
 
-playRound(humanChoice, computerChoice);
 
+function playGame(){
+    
+    for( let i=0; i<5 ; i++){
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    }
+    
+}
+
+playGame();
 
 // This line will help later with the turn loop
 // for (let i=0; i<20; i++){
