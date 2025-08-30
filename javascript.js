@@ -21,8 +21,30 @@ function getHumanChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
-console.log(getHumanChoice());
-console.log(getComputerChoice());
+let humanChoice = getHumanChoice();
+let computerChoice = getComputerChoice();
+
+function playRound(humanChoice, computerChoice){
+   let localHumanChoice = humanChoice.toLowerCase();
+   let localComputerChoice = computerChoice.toLowerCase();
+
+   if(localHumanChoice === localComputerChoice){
+    console.log("It's a Tie! You both chose "+computerChoice+" No points awarded");
+   }
+   else if (localHumanChoice === "rock" && localComputerChoice ==="paper" ||
+            localHumanChoice === "paper" && localComputerChoice ==="scissors" ||
+            localHumanChoice === "scissors" && localComputerChoice ==="rock" ){
+        console.log("You lose! Computer's "+computerChoice+" beats your "+humanChoice);
+        computerScore ++;
+        console.log ("Computer: "+computerScore+" Human: "+humanScore);
+   }else{
+        console.log("You won! Your "+humanChoice+ " beats Computer's "+computerChoice);
+        humanScore ++;
+        console.log ("Computer: "+computerScore+" Human: "+humanScore);
+   }
+}
+
+playRound(humanChoice, computerChoice);
 
 
 // This line will help later with the turn loop
