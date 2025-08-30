@@ -9,3 +9,8 @@ The project is divided in 4 stages:
 4. Extend to play 5 rounds and declare a winner.
 
 All interaction will be through the browser's console (maybe later I will return and add full html and css )
+
+-------------------------------------------------------------------
+
+Finished the assignment but the RNG still feels odd, maybe with another 
+algorithm it can feel more "random".
