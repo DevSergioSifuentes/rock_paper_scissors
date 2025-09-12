@@ -31,8 +31,14 @@ const scissorsButton = document.querySelector("#scissors_option");
 
 
 function updateScore(){
-    scoreP.textContent = "Computer: " +computerScore+ "  Human: "+
-    humanScore;
+    
+    if(computerScore <= 5 && humanScore <= 5){
+        scoreP.textContent = "Computer: " +computerScore+ "  Human: "+
+        humanScore;
+    }
+    else{
+        alert("Game Over");
+    }
 }
 
 function playRound(humanChoice, computerChoice){
@@ -64,9 +70,6 @@ function playGame(choice){
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
     updateScore();
-    // if(computerScore === 5 || humanScore === 5){
-    //     alert("Game Over");
-    // }
 }
 
 updateScore();
