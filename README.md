@@ -14,3 +14,16 @@ All interaction will be through the browser's console (maybe later I will return
 
 Finished the assignment but the RNG still feels odd, maybe with another 
 algorithm it can feel more "random".
+
+--------------------------------------------------------------------
+11/09/2025 :
+Adding a UI and DOM manipulation
+
+Again, commits will be divided in stages:
+
+1. Change user choices from a prompt to 3 buttons.
+2. Display results and scores to be displayed in divs
+3. Change the hard coded 5 round game to a five game wins.
+
+Also, this change is done in a different branch to see how it 
+works.

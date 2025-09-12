@@ -21,40 +21,44 @@ function getHumanChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
+const scoreP = document.querySelector("#score_p");
+const resultP = document.querySelector("#results_p");
+const container = document.querySelector(".container");
+
+function updateScore(){
+    scoreP.textContent = "Computer: " +computerScore+ "  Human: "+
+    humanScore;
+}
+
 function playRound(humanChoice, computerChoice){
    let localHumanChoice = humanChoice.toLowerCase();
    let localComputerChoice = computerChoice.toLowerCase();
 
    if(localHumanChoice === localComputerChoice){
-    console.log("It's a Tie! You both chose "+computerChoice+" No points awarded");
+    resultP.textContent= "It's a Tie! You both chose "+computerChoice+" No points awarded";
    }
    else if (localHumanChoice === "rock" && localComputerChoice ==="paper" ||
             localHumanChoice === "paper" && localComputerChoice ==="scissors" ||
             localHumanChoice === "scissors" && localComputerChoice ==="rock" ){
-        console.log("You lose! Computer's "+computerChoice+" beats your "+humanChoice);
+        resultP.textContent= "You lose! Computer's "+computerChoice+" beats your "+humanChoice;
         computerScore ++;
-        console.log ("Computer: "+computerScore+" Human: "+humanScore);
+        updateScore();
    }else{
-        console.log("You won! Your "+humanChoice+ " beats Computer's "+computerChoice);
+        resultP.textContent = "You won! Your "+humanChoice+ " beats Computer's "+computerChoice;
         humanScore ++;
-        console.log ("Computer: "+computerScore+" Human: "+humanScore);
+        updateScore();
    }
 }
 
 
-function playGame(){
-    
-    for( let i=0; i<5 ; i++){
+function playGame(){    
+    while(computerScore < 5 || humanScore < 5){
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
-    }
-    
+    };
 }
 
+updateScore();
 playGame();
 
-// This line will help later with the turn loop
-// for (let i=0; i<20; i++){
-//     getComputerChoice();
-// }
